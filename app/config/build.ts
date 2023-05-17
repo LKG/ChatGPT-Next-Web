@@ -2,7 +2,7 @@ const COMMIT_ID: string = (() => {
   try {
     const childProcess = require("child_process");
     return childProcess
-      .execSync('git log -1 --format="%at000" --date=unix')
+      .execSync('git log -1 --format="%at000"')
       .toString()
       .trim();
   } catch (e) {
