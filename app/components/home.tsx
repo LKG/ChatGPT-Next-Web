@@ -22,6 +22,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { SideBar } from "./sidebar";
+import { Toolbar } from "./toolbar";
 import { useAppConfig } from "../store/config";
 
 export function Loading(props: { noLogo?: boolean }) {
@@ -119,8 +120,8 @@ function Screen() {
         }`
       }
     >
+      <Toolbar className={isHome ? styles["sidebar-show"] : ""} />
       <SideBar className={isHome ? styles["sidebar-show"] : ""} />
-
       <div className={styles["window-content"]} id={SlotID.AppBody}>
         <Routes>
           <Route path={Path.Home} element={<Chat />} />
