@@ -1,7 +1,6 @@
 import React from "react";
 import { IconButton } from "./button";
 import ResetIcon from "../icons/reload.svg";
-import { ISSUE_URL } from "../constant";
 import Locale from "../locales";
 import { downloadAs } from "../utils";
 
