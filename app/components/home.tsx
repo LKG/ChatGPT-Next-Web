@@ -22,7 +22,6 @@ import {
   useLocation,
 } from "react-router-dom";
 import { SideBar } from "./sidebar";
-import { Toolbar } from "./toolbar";
 import { useAppConfig } from "../store/config";
 
 export function Loading(props: { noLogo?: boolean }) {
@@ -45,7 +44,12 @@ const Chat = dynamic(async () => (await import("./chat")).Chat, {
 const NewChat = dynamic(async () => (await import("./new-chat")).NewChat, {
   loading: () => <Loading noLogo />,
 });
-
+const Login = dynamic(async () => (await import("./login")).Login, {
+  loading: () => <Loading noLogo />,
+});
+const My = dynamic(async () => (await import("./my")).My, {
+  loading: () => <Loading noLogo />,
+});
 const MaskPage = dynamic(async () => (await import("./mask")).MaskPage, {
   loading: () => <Loading noLogo />,
 });
@@ -120,7 +124,6 @@ function Screen() {
         }`
       }
     >
-      <Toolbar className={isHome ? styles["sidebar-show"] : ""} />
       <SideBar className={isHome ? styles["sidebar-show"] : ""} />
       <div className={styles["window-content"]} id={SlotID.AppBody}>
         <Routes>
@@ -129,6 +132,8 @@ function Screen() {
           <Route path={Path.Masks} element={<MaskPage />} />
           <Route path={Path.Chat} element={<Chat />} />
           <Route path={Path.Settings} element={<Settings />} />
+          <Route path={Path.My} element={<My />} />
+          <Route path={Path.Login} element={<Login />} />
         </Routes>
       </div>
     </div>

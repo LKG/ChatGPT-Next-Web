@@ -55,6 +55,7 @@ function MaskItem(props: { mask: Mask; onClick?: () => void }) {
     <div className={styles["mask"]} ref={domRef} onClick={props.onClick}>
       <MaskAvatar mask={props.mask} />
       <div className={styles["mask-name"] + " one-line"}>{props.mask.name}</div>
+      <div className={styles["mask-lang"]}>{`${props.mask.lang}`}</div>
     </div>
   );
 }
