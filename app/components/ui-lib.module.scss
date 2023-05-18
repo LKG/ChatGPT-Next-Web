@@ -75,7 +75,7 @@
   width: 60vw;
   animation: slide-in ease 0.3s;
 
-  --modal-padding: 20px;
+  --modal-padding: 15px;
 
   .modal-header {
     padding: var(--modal-padding);
@@ -99,8 +99,8 @@
   }
 
   .modal-content {
-    max-height: 40vh;
-    padding: var(--modal-padding);
+    max-height: 70vh;
+    padding: 5px;
     overflow: auto;
   }
 
