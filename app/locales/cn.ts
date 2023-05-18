@@ -9,6 +9,26 @@ const cn = {
   ChatItem: {
     ChatItemCount: (count: number) => `${count} 条对话`,
   },
+  Login: {
+    Title: "用户登录",
+    UserName: "帐号名",
+    UserNamePlaceholder: "注册号/手机号/邮箱",
+    PassWord: "登录密码",
+    Button: "登录",
+    RememberMe: "一周免登陆",
+    Forget: "忘记密码 ^_^?",
+    Register: "免费注册",
+  },
+  Register: {
+    Title: "用户注册",
+    UserPhone: "手机号",
+    PassWord: "登录密码",
+    PhoneCode: "短信码",
+    PhoneCodeBtn: "获取验证码",
+    RetryPassWord: "密码确认",
+    Button: "免费注册",
+    Protocol: "我已阅读并同意[《用户注册协议》](/#/protocol)",
+  },
   Chat: {
     SubTitle: (count: number) => `与 ChatGPT 的 ${count} 条对话`,
     Actions: {

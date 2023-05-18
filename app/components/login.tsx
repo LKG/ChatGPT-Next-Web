@@ -1,14 +1,7 @@
 import { useState, useEffect, HTMLProps, useRef } from "react";
 
 import styles from "./login.module.scss";
-
-import ResetIcon from "../icons/reload.svg";
-import AddIcon from "../icons/add.svg";
-import CloseIcon from "../icons/close.svg";
-import CopyIcon from "../icons/copy.svg";
-import ClearIcon from "../icons/clear.svg";
-import LoadingIcon from "../icons/three-dots.svg";
-import EditIcon from "../icons/edit.svg";
+import BotIcon from "../icons/bot.svg";
 import EyeIcon from "../icons/eye.svg";
 import {
   Input,
@@ -62,27 +55,68 @@ export function Login() {
 
   return (
     <ErrorBoundary>
-      <div className={styles["login"]}>
-        <List>
-          <ListItem title={Locale.Settings.SendKey}>
-            <input
-              type="text"
-              value=""
-              className={styles["login-username"]}
-              onInput={(e) => {
-                alert();
-              }}
-            ></input>
-          </ListItem>
-          <ListItem title={Locale.Settings.SendKey}>
-            <PasswordInput
-              value=""
-              type="text"
-              placeholder={Locale.Settings.Token.Placeholder}
-              onChange={(e) => {}}
+      <div className={styles["login-box"]}>
+        <div className={styles["login-box-switch"]}>
+          <a
+            href="javascript:;"
+            className={styles["btn-2qrcode"]}
+            title="扫码安全登录"
+          >
+            扫码安全登录
+          </a>
+          <form>
+            <div className={styles["field"]}>
+              <label>{Locale.Login.UserName}</label>
+              <div className={styles["input-group"]}>
+                {/* <div className={styles["input-group-addon"]} > </div> */}
+                <input
+                  type="text"
+                  name="userName"
+                  title={Locale.Login.UserNamePlaceholder}
+                  className={styles["login-text"]}
+                  placeholder={Locale.Login.UserNamePlaceholder}
+                  value=""
+                />
+              </div>
+            </div>
+            <div className={styles["field"]}>
+              <label>{Locale.Login.PassWord}</label>
+              <a className={styles["forget-pw-safe"]} target="_blank">
+                {Locale.Login.Forget}
+              </a>
+              <div className={styles["input-group"]}>
+                {/* <div className={styles["input-group-addon"]}></div> */}
+                <input
+                  type="text"
+                  name="userName"
+                  title={Locale.Login.PassWord}
+                  className={styles["login-text"]}
+                  placeholder={Locale.Login.PassWord}
+                  value=""
+                />
+              </div>
+            </div>
+            <div className={styles["field"]}>
+              <label className={styles["remember-me"]}>
+                <input name="rememberMe" type="checkbox" />
+                {Locale.Login.RememberMe}
+              </label>
+              <a className={styles["register-safe"]} target="_blank">
+                {Locale.Login.Register}
+              </a>
+            </div>
+            <IconButton
+              text={Locale.Login.Button}
+              className={styles["login-btn"]}
+              type="primary"
             />
-          </ListItem>
-        </List>
+          </form>
+        </div>
+        {/* 标准登录框 */}
+
+        {/* 二维码登录框 */}
+        <div className={styles["login-box-switch qrcode-login"]}></div>
+        <form></form>
       </div>
     </ErrorBoundary>
   );
