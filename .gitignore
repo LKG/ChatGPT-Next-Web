@@ -36,7 +36,10 @@ yarn-error.log*
 next-env.d.ts
 dev
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 42711d76d659ef41188cd7505ce288bb7b7b0db1
 .vscode
 .idea
 
