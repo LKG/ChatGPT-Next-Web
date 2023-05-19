@@ -1,15 +1,6 @@
 import { useState, useEffect, useMemo, HTMLProps, useRef } from "react";
 
 import styles from "./settings.module.scss";
-
-import ResetIcon from "../icons/reload.svg";
-import AddIcon from "../icons/add.svg";
-import CloseIcon from "../icons/close.svg";
-import CopyIcon from "../icons/copy.svg";
-import ClearIcon from "../icons/clear.svg";
-import LoadingIcon from "../icons/three-dots.svg";
-import EditIcon from "../icons/edit.svg";
-import EyeIcon from "../icons/eye.svg";
 import {
   Input,
   List,
@@ -101,6 +92,16 @@ export function My() {
               </div>
             </Popover>
           </ListItem>
+        </List>
+        <List>
+          <IconButton
+            text={Locale.Login.Register}
+            className={styles["login-register-btn"]}
+            type="primary"
+            onClick={() => {
+              navigate(Path.Regist);
+            }}
+          />
         </List>
       </div>
     </ErrorBoundary>

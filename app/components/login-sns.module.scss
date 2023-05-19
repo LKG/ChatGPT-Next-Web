@@ -1,0 +1,22 @@
+.login-sns{
+  display: flex;
+  margin-top: -20px;
+  height: 42px;
+  .weibo {
+    display: flex;
+  }
+  .qq {
+    display: flex;
+  }
+  .baidu {
+    display: flex;
+  }
+  ul {
+    display: flex;
+    padding: 0px 10px 5px 0px;
+    li{
+      padding: 0px 10px 5px 0px;
+      list-style: none;
+    }
+  }
+}

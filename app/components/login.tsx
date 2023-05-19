@@ -10,7 +10,7 @@ import Link from "next/link";
 import { Path } from "../constant";
 import { ErrorBoundary } from "./error";
 import { useNavigate } from "react-router-dom";
-
+import { LoginSns } from "./login-sns";
 export function Login() {
   const navigate = useNavigate();
   const config = useAppConfig();
@@ -139,6 +139,7 @@ export function Login() {
                 }}
               />
             </form>
+            <LoginSns />
           </div>
           {/* 标准登录框 */}
 
