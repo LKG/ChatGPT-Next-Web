@@ -1,7 +1,6 @@
 import { useState, useEffect, HTMLProps, useRef } from "react";
 
 import styles from "./regist.module.scss";
-import EyeIcon from "../icons/eye.svg";
 import { Input, Modal, Popover, showToast, Select } from "./ui-lib";
 import { ModelConfigList } from "./model-config";
 import { IconButton } from "./button";
@@ -79,6 +78,9 @@ export function Regist() {
                       text={Locale.Register.PhoneCodeBtn}
                       className={styles["login-sms-btn"]}
                       type="primary"
+                      onClick={() => {
+                        showToast(Locale.WIP);
+                      }}
                     />
                   </span>
                 </div>
@@ -127,6 +129,9 @@ export function Regist() {
                 text={Locale.Login.Button}
                 className={styles["register-login-btn"]}
                 type="primary"
+                onClick={() => {
+                  navigate(Path.Login);
+                }}
               />
             </form>
           </div>

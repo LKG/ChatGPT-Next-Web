@@ -1,10 +1,7 @@
 import { useState, useEffect, HTMLProps, useRef } from "react";
 
 import styles from "./login.module.scss";
-import BotIcon from "../icons/bot.svg";
-import EyeIcon from "../icons/eye.svg";
 import { Input, Modal, Popover, showToast, Select } from "./ui-lib";
-import { ModelConfigList } from "./model-config";
 import { IconButton } from "./button";
 import { useAppConfig } from "../store";
 
@@ -98,6 +95,9 @@ export function Login() {
                 text={Locale.Login.Register}
                 className={styles["login-register-btn"]}
                 type="primary"
+                onClick={() => {
+                  navigate(Path.Regist);
+                }}
               />
             </form>
           </div>
