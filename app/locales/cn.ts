@@ -13,6 +13,8 @@ const cn = {
     Title: "用户登录",
     UserName: "帐号名",
     UserNamePlaceholder: "注册号/手机号/邮箱",
+    ValidateCode: "验证码",
+    ChangeCode: "看不清",
     PassWord: "登录密码",
     Button: "登录",
     RememberMe: "一周免登陆",

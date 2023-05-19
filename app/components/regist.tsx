@@ -2,7 +2,7 @@ import { useState, useEffect, HTMLProps, useRef } from "react";
 
 import styles from "./regist.module.scss";
 import { Input, Modal, Popover, showToast, Select } from "./ui-lib";
-import { ModelConfigList } from "./model-config";
+
 import { IconButton } from "./button";
 import { useAppConfig } from "../store";
 

@@ -62,6 +62,33 @@ export function Login() {
                 </div>
               </div>
               <div className={styles["field"]}>
+                <label>{Locale.Login.ValidateCode}</label>
+                <div className={styles["input-group"]}>
+                  <input
+                    type="text"
+                    name="validateCode"
+                    title={Locale.Login.ValidateCode}
+                    className={styles["login-validate-code"]}
+                    placeholder={Locale.Login.ValidateCode}
+                    value=""
+                  />
+                  <img
+                    src="https://www.gongwk.com/validate/passcode?_r_0.3136760189843122"
+                    className={styles["login-validate-code-img"]}
+                  />
+                  <span className={styles["input-group-btn"]}>
+                    <IconButton
+                      text={Locale.Login.ChangeCode}
+                      className={styles["login-change-code-btn"]}
+                      type="primary"
+                      onClick={() => {
+                        showToast(Locale.WIP);
+                      }}
+                    />
+                  </span>
+                </div>
+              </div>
+              <div className={styles["field"]}>
                 <label>{Locale.Login.PassWord}</label>
                 <a className={styles["forget-pw-safe"]} target="_blank">
                   {Locale.Login.Forget}

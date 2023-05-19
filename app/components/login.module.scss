@@ -147,8 +147,7 @@
     }
 
     .input-group {
-      position: relative;
-      display: table;
+      display: flex;
       border-collapse: separate;
       .login-text {
         width: 265px;
@@ -159,6 +158,28 @@
         border: 1px solid #ccc;
         outline: none;
         vertical-align: middle;
+      }
+      .input-group-btn {
+        position: relative;
+        font-size: 0;
+        white-space: nowrap;
+        vertical-align: middle;
+        display: table-cell;
+        left: -3px;
+      }
+      .login-validate-code-img{
+        height: 36px;
+        position: relative;
+        left: -3px;
+      }
+      .login-validate-code {
+        width: 120px;
+        border-radius: 10px 0px 0px 10px;
+      }
+      .login-change-code-btn {
+        height: 36px;
+        position: relative;
+        border-radius: 0px 10px 10px 0px;
       }
     }
   }
