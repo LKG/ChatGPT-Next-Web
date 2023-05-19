@@ -90,7 +90,13 @@ export function Login() {
               </div>
               <div className={styles["field"]}>
                 <label>{Locale.Login.PassWord}</label>
-                <a className={styles["forget-pw-safe"]} target="_blank">
+                <a
+                  className={styles["forget-pw-safe"]}
+                  onClick={() => {
+                    navigate(Path.Regist);
+                  }}
+                  target="_blank"
+                >
                   {Locale.Login.Forget}
                 </a>
                 <div className={styles["input-group"]}>
@@ -109,7 +115,13 @@ export function Login() {
                   <input name="rememberMe" type="checkbox" />
                   {Locale.Login.RememberMe}
                 </label>
-                <a className={styles["register-safe"]} target="_blank">
+                <a
+                  className={styles["register-safe"]}
+                  target="_blank"
+                  onClick={() => {
+                    navigate(Path.Regist);
+                  }}
+                >
                   {Locale.Login.Register}
                 </a>
               </div>

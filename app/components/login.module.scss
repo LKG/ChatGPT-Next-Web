@@ -3,11 +3,9 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 15%;
+  margin-top: 10%;
 }
 .login-box {
-  // width: 317px;
-  // height: 317px;
   margin: 0px 0px;
   border-top: 2px solid #eee;
   border-bottom: 1px solid #dedede;
@@ -96,6 +94,7 @@
     outline: 0;
     overflow: hidden;
     position: absolute;
+    cursor: pointer;
     top: 0;
     right: 24px;
     z-index: 2;
@@ -141,6 +140,7 @@
     .register-safe {
       position: absolute;
       right: 50px;
+      cursor: pointer;
       padding-top: 5px;
       font-size: 14px;
       top: 0;

@@ -43,7 +43,9 @@ export function Regist() {
               href="javascript:;"
               className={styles["btn-2login"]}
               title={Locale.Login.QrScan}
-              onClick={() => showToast(Locale.WIP)}
+              onClick={() => {
+                navigate(Path.Login);
+              }}
             >
               {Locale.Login.QrScan}
             </a>
