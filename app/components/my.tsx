@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, HTMLProps, useRef } from "react";
 
-import styles from "./settings.module.scss";
+import styles from "./my.module.scss";
 import {
   Input,
   List,
@@ -21,10 +21,9 @@ import Link from "next/link";
 import { Path } from "../constant";
 import { Prompt, SearchService, usePromptStore } from "../store/prompt";
 import { ErrorBoundary } from "./error";
-import { InputRange } from "./input-range";
 import { useNavigate } from "react-router-dom";
 import { Avatar, AvatarPicker } from "./emoji";
-
+import SettingsIcon from "../icons/settings.svg";
 export function My() {
   const navigate = useNavigate();
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
@@ -69,9 +68,9 @@ export function My() {
 
   return (
     <ErrorBoundary>
-      <div className={styles["settings"]}>
+      <div className={styles["my"]}>
         <List>
-          <ListItem title={Locale.Settings.Avatar}>
+          <ListItem title={Locale.Settings.Avatar} icon={SettingsIcon}>
             <Popover
               onClose={() => setShowEmojiPicker(false)}
               content={
@@ -94,6 +93,11 @@ export function My() {
           </ListItem>
         </List>
         <List>
+          <ListItem
+            title={Locale.Settings.Title}
+            className={styles["my-list-item"]}
+            icon={<SettingsIcon></SettingsIcon>}
+          ></ListItem>
           <IconButton
             text={Locale.Login.Register}
             className={styles["login-register-btn"]}
