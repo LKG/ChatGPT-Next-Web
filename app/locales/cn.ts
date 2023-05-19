@@ -16,6 +16,7 @@ const cn = {
     PassWord: "登录密码",
     Button: "登录",
     RememberMe: "一周免登陆",
+    QrScan: "扫码安全登录",
     Forget: "忘记密码 ^_^?",
     Register: "免费注册",
   },

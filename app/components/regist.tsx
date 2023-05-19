@@ -14,7 +14,7 @@ import { Path } from "../constant";
 import { ErrorBoundary } from "./error";
 import { useNavigate } from "react-router-dom";
 
-export function Login() {
+export function Regist() {
   const navigate = useNavigate();
   const config = useAppConfig();
   const [loadingUsage, setLoadingUsage] = useState(false);
@@ -96,43 +96,6 @@ export function Login() {
           </form>
         </div>
         {/* 标准登录框 */}
-
-        {/* 二维码登录框 */}
-        <div
-          className={styles["login-box-switch"] + " " + styles["login-qrcode"]}
-        >
-          <a
-            href="javascript:;"
-            className={styles["btn-2login"]}
-            title={Locale.Login.Title}
-          >
-            {Locale.Login.Title}
-          </a>
-          <div className={styles["qrcode-mod"]}>
-            <div className={styles["qrcode-desc"]}>
-              <h2>微信扫码 安全登录</h2>
-            </div>
-            <div className={styles["qrcode-err"]}>
-              <h6>扫描失败</h6>请刷新二维码后重新扫描
-            </div>
-            <div className={styles["qrcode-main"]}>
-              <div className={styles["qrcode-img"]}>
-                <img
-                  title="二维码"
-                  src="https://www.gongwk.com/validate/qrWxCode.json"
-                />
-              </div>
-            </div>
-            <div className={styles["qrcode-panel"]}>
-              <a href="javascript:void(0);" id="J_QRCodeHandle">
-                刷新二维码
-              </a>
-            </div>
-            <div className={styles["qrcode-panel"]}>
-              <a href="javascript:void(0);">扫码关注登录注册</a>
-            </div>
-          </div>
-        </div>
       </div>
     </ErrorBoundary>
   );

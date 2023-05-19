@@ -4,9 +4,57 @@
   overflow: hidden;
   margin: 0px 0px;
   border-top: 2px solid #eee;
+  border-bottom: 1px solid #dedede;
 }
-.qrcode-login{
+.login-qrcode {
   display: none;
+  padding-left: 0px !important;
+  .qrcode-img {
+    width: 200px;
+    opacity: 1;
+    height: 200px;
+    margin: 0 auto;
+    border: 2px solid #dedede;
+    box-shadow: 0 0 8px #ddd;
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  .qrcode-desc {
+    margin: 0 10px;
+    padding: 15px 0px 0px 15px;
+    color: #999;
+    h2 {
+      color: #333;
+      font-size: 14px;
+      font-weight: 700;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .qrcode-err {
+    display: none;
+    padding: 30px 25px 18px 94px;
+    border-bottom: 1px dashed #f2f2f2;
+  }
+  .qrcode-main {
+    position: relative;
+    padding: 15px 0 5px;
+    min-height: 200px;
+    _height: 200px;
+  }
+  .qrcode-panel {
+    color: #b0b0b0;
+    text-align: center;
+    a {
+      color: #444;
+      margin: 0 3px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+  }
 }
 .login-box-switch {
   _height: 317px;
@@ -17,10 +65,19 @@
   border-right: 1px solid #dedede;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
+  .login-message {
+    font: 12px/1.5 Tahoma, Helvetica, Arial, "\5B8B\4F53", sans-serif;
+    padding-top: 3px;
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-right: 40px;
+    min-height: 35px;
+    _height: 35px;
+  }
   .btn-2login,
   .btn-2qrcode,
   .btn-2phone {
-    display: none;
+    display: block;
     width: 40px;
     height: 40px;
     line-height: 30px;
@@ -38,7 +95,7 @@
     top: -5px;
     display: block;
     background-image: url("/switcher-qr.png");
-}
+  }
   .login-btn {
     border-radius: 4px;
     width: 100%;
@@ -58,6 +115,7 @@
     }
     .remember-me {
       display: inline-flex;
+      padding-top: 5px;
       align-items: center;
       justify-content: center;
     }
@@ -65,6 +123,7 @@
     .register-safe {
       position: absolute;
       right: 50px;
+      padding-top: 5px;
       font-size: 14px;
       top: 0;
     }
