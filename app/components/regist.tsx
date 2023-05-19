@@ -1,7 +1,6 @@
 import { useState, useEffect, HTMLProps, useRef } from "react";
 
-import styles from "./login.module.scss";
-import BotIcon from "../icons/bot.svg";
+import styles from "./regist.module.scss";
 import EyeIcon from "../icons/eye.svg";
 import { Input, Modal, Popover, showToast, Select } from "./ui-lib";
 import { ModelConfigList } from "./model-config";
@@ -38,64 +37,101 @@ export function Regist() {
 
   return (
     <ErrorBoundary>
-      <div className={styles["login-box"]}>
-        <div className={styles["login-box-switch"]}>
-          <a
-            href="javascript:;"
-            className={styles["btn-2qrcode"]}
-            title={Locale.Login.QrScan}
-            onClick={() => showToast(Locale.WIP)}
-          >
-            {Locale.Login.QrScan}
-          </a>
-          <div className={styles["login-message"]}></div>
-          <form>
-            <div className={styles["field"]}>
-              <label>{Locale.Login.UserName}</label>
-              <div className={styles["input-group"]}>
-                <input
-                  type="text"
-                  name="userName"
-                  title={Locale.Login.UserNamePlaceholder}
-                  className={styles["login-text"]}
-                  placeholder={Locale.Login.UserNamePlaceholder}
-                  value=""
-                />
+      <div className={styles["regist"]}>
+        <div className={styles["regist-box"]}>
+          <div className={styles["login-box-switch"]}>
+            <a
+              href="javascript:;"
+              className={styles["btn-2login"]}
+              title={Locale.Login.QrScan}
+              onClick={() => showToast(Locale.WIP)}
+            >
+              {Locale.Login.QrScan}
+            </a>
+            <div className={styles["regist-message"]}></div>
+            <form>
+              <div className={styles["field"]}>
+                <label>{Locale.Register.UserPhone}</label>
+                <div className={styles["input-group"]}>
+                  <input
+                    type="text"
+                    name="userPhone"
+                    title={Locale.Register.UserPhone}
+                    className={styles["login-text"]}
+                    placeholder={Locale.Register.UserPhone}
+                    value=""
+                  />
+                </div>
               </div>
-            </div>
-            <div className={styles["field"]}>
-              <label>{Locale.Login.PassWord}</label>
-              <a className={styles["forget-pw-safe"]} target="_blank">
-                {Locale.Login.Forget}
-              </a>
-              <div className={styles["input-group"]}>
-                <input
-                  type="text"
-                  name="userName"
-                  title={Locale.Login.PassWord}
-                  className={styles["login-text"]}
-                  placeholder={Locale.Login.PassWord}
-                  value=""
-                />
+              <div className={styles["field"]}>
+                <label>{Locale.Register.PhoneCode}</label>
+                <div className={styles["input-group"]}>
+                  <input
+                    type="text"
+                    name="userPhone"
+                    title={Locale.Register.UserPhone}
+                    className={styles["login-phone-code"]}
+                    placeholder={Locale.Register.PhoneCode}
+                    value=""
+                  />
+                  <span className={styles["input-group-btn"]}>
+                    <IconButton
+                      text={Locale.Register.PhoneCodeBtn}
+                      className={styles["login-sms-btn"]}
+                      type="primary"
+                    />
+                  </span>
+                </div>
               </div>
-            </div>
-            <div className={styles["field"]}>
-              <label className={styles["remember-me"]}>
-                <input name="rememberMe" type="checkbox" />
-                {Locale.Login.RememberMe}
-              </label>
-              <a className={styles["register-safe"]} target="_blank">
-                {Locale.Login.Register}
-              </a>
-            </div>
-            <IconButton
-              text={Locale.Login.Button}
-              className={styles["login-btn"]}
-              type="primary"
-            />
-          </form>
+              <div className={styles["field"]}>
+                <label>{Locale.Register.PassWord}</label>
+                <div className={styles["input-group"]}>
+                  <input
+                    type="password"
+                    name="passWord"
+                    title={Locale.Register.PassWord}
+                    className={styles["login-text"]}
+                    placeholder={Locale.Register.PassWord}
+                    value=""
+                  />
+                </div>
+              </div>
+              <div className={styles["field"]}>
+                <label>{Locale.Register.RetryPassWord}</label>
+                <div className={styles["input-group"]}>
+                  <input
+                    type="password"
+                    name="retryPassWord"
+                    title={Locale.Register.RetryPassWord}
+                    className={styles["login-text"]}
+                    placeholder={Locale.Register.RetryPassWord}
+                    value=""
+                  />
+                </div>
+              </div>
+              <div className={styles["field"]}>
+                <label className={styles["remember-me"]}>
+                  <input name="rememberMe" type="checkbox" />
+                  {Locale.Register.Agree}
+                </label>
+                <a className={styles["register-protocol"]}>
+                  {Locale.Register.Protocol}
+                </a>
+              </div>
+              <IconButton
+                text={Locale.Login.Register}
+                className={styles["register-btn"]}
+                type="primary"
+              />
+              <IconButton
+                text={Locale.Login.Button}
+                className={styles["register-login-btn"]}
+                type="primary"
+              />
+            </form>
+          </div>
+          {/* 标准登录框 */}
         </div>
-        {/* 标准登录框 */}
       </div>
     </ErrorBoundary>
   );

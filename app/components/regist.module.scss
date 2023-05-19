@@ -1,11 +1,11 @@
-.login {
+.regist {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 15%;
+  margin-top: 10%;
 }
-.login-box {
+.regist-box {
   // width: 317px;
   // height: 317px;
   margin: 0px 0px;
@@ -18,56 +18,6 @@
   justify-content: center;
   flex-direction: column;
 }
-.login-qrcode {
-  display: none;
-  padding-left: 0px !important;
-  .qrcode-img {
-    width: 200px;
-    opacity: 1;
-    height: 200px;
-    margin: 0 auto;
-    border: 2px solid #dedede;
-    box-shadow: 0 0 8px #ddd;
-    img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
-  }
-  .qrcode-desc {
-    margin: 0 10px;
-    padding: 15px 0px 0px 15px;
-    color: #999;
-    h2 {
-      color: #333;
-      font-size: 14px;
-      font-weight: 700;
-      margin: 0;
-      padding: 0;
-    }
-  }
-  .qrcode-err {
-    display: none;
-    padding: 30px 25px 18px 94px;
-    border-bottom: 1px dashed #f2f2f2;
-  }
-  .qrcode-main {
-    position: relative;
-    padding: 15px 0 5px;
-    min-height: 200px;
-    _height: 200px;
-  }
-  .qrcode-panel {
-    color: #b0b0b0;
-    text-align: center;
-    a {
-      color: #444;
-      margin: 0 3px;
-      text-decoration: none;
-      font-size: 14px;
-    }
-  }
-}
 .login-box-switch {
   height: 100%;
   z-index: 1;
@@ -76,7 +26,7 @@
   padding-bottom: 40px;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
-  .login-message {
+  .regist-message {
     font: 12px/1.5 Tahoma, Helvetica, Arial, "\5B8B\4F53", sans-serif;
     padding-top: 3px;
     padding-left: 10px;
@@ -104,14 +54,14 @@
   .btn-2qrcode {
     background-image: url("/switcher-qr.png");
   }
-  .login-btn {
+  .register-btn {
     border-radius: 4px;
     width: 100%;
     padding: 10px;
     width: 265px;
     margin-bottom: 8px;
   }
-  .login-register-btn{
+  .register-login-btn {
     border-radius: 4px;
     width: 100%;
     padding: 10px;
@@ -120,6 +70,17 @@
     background-color: transparent;
     color: #666;
     margin-bottom: 8px;
+  }
+  .remember-me {
+    display: inline-flex;
+    padding-top: 5px;
+    align-items: center;
+    justify-content: center;
+  }
+  .register-protocol {
+    font-size: 14px;
+    cursor: pointer;
+    // top: 0;
   }
   .field {
     position: relative;
@@ -131,26 +92,11 @@
       padding-bottom: 3px;
       color: #444;
     }
-    .remember-me {
-      display: inline-flex;
-      padding-top: 5px;
-      align-items: center;
-      justify-content: center;
-    }
-    .forget-pw-safe,
-    .register-safe {
-      position: absolute;
-      right: 50px;
-      padding-top: 5px;
-      font-size: 14px;
-      top: 0;
-    }
-
     .input-group {
       position: relative;
       display: table;
       border-collapse: separate;
-      .login-text {
+      .login-text,.login-phone-code {
         width: 265px;
         height: 28px;
         line-height: 20px;
@@ -159,6 +105,22 @@
         border: 1px solid #ccc;
         outline: none;
         vertical-align: middle;
+      }
+      .login-phone-code {
+        width: 177px;
+        border-radius: 10px 0px 0px 10px;
+      }
+      .input-group-btn {
+        position: relative;
+        font-size: 0;
+        white-space: nowrap;
+        vertical-align: middle;
+        display: table-cell;
+        left: -3px
+      }
+      .login-sms-btn {
+        height: 36px;
+        border-radius: 0px 10px 10px 0px;
       }
     }
   }

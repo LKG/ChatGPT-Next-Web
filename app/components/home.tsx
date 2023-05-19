@@ -47,6 +47,9 @@ const NewChat = dynamic(async () => (await import("./new-chat")).NewChat, {
 const Login = dynamic(async () => (await import("./login")).Login, {
   loading: () => <Loading noLogo />,
 });
+const Regist = dynamic(async () => (await import("./regist")).Regist, {
+  loading: () => <Loading noLogo />,
+});
 const My = dynamic(async () => (await import("./my")).My, {
   loading: () => <Loading noLogo />,
 });
@@ -134,6 +137,7 @@ function Screen() {
           <Route path={Path.Settings} element={<Settings />} />
           <Route path={Path.My} element={<My />} />
           <Route path={Path.Login} element={<Login />} />
+          <Route path={Path.Regist} element={<Regist />} />
         </Routes>
       </div>
     </div>

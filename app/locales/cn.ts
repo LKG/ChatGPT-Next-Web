@@ -28,7 +28,8 @@ const cn = {
     PhoneCodeBtn: "获取验证码",
     RetryPassWord: "密码确认",
     Button: "免费注册",
-    Protocol: "我已阅读并同意[《用户注册协议》](/#/protocol)",
+    Agree: "我已阅读并同意",
+    Protocol: "《用户注册协议》",
   },
   Chat: {
     SubTitle: (count: number) => `与 ChatGPT 的 ${count} 条对话`,
