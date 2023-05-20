@@ -10,6 +10,30 @@ const cs: LocaleType = {
   ChatItem: {
     ChatItemCount: (count: number) => `${count} zpráv`,
   },
+  Login: {
+    Title: "用户登录",
+    UserName: "帐号名",
+    UserNamePlaceholder: "注册号/手机号/邮箱",
+    ValidateCode: "验证码",
+    ChangeCode: "看不清",
+    PassWord: "登录密码",
+    Button: "登录",
+    RememberMe: "一周免登陆",
+    QrScan: "扫码安全登录",
+    Forget: "忘记密码 ^_^?",
+    Register: "免费注册",
+  },
+  Register: {
+    Title: "用户注册",
+    UserPhone: "手机号",
+    PassWord: "登录密码",
+    PhoneCode: "短信码",
+    PhoneCodeBtn: "获取验证码",
+    RetryPassWord: "密码确认",
+    Button: "免费注册",
+    Agree: "我已阅读并同意",
+    Protocol: "《用户注册协议》",
+  },
   Chat: {
     SubTitle: (count: number) => `${count} zpráv s ChatGPT`,
     Actions: {
