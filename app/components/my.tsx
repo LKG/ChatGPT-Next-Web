@@ -98,6 +98,26 @@ export function My() {
             className={styles["my-list-item"]}
             icon={<SettingsIcon></SettingsIcon>}
           ></ListItem>
+          <ListItem
+            title={Locale.Settings.Title}
+            className={styles["my-list-item"]}
+            icon={<SettingsIcon></SettingsIcon>}
+          ></ListItem>
+          <ListItem
+            title={Locale.Settings.Title}
+            className={styles["my-list-item"]}
+            icon={<SettingsIcon></SettingsIcon>}
+          ></ListItem>
+          <ListItem
+            title={Locale.Settings.Title}
+            className={styles["my-list-item"]}
+            icon={<SettingsIcon></SettingsIcon>}
+          ></ListItem>
+          <ListItem
+            title={Locale.Settings.Title}
+            className={styles["my-list-item"]}
+            icon={<SettingsIcon></SettingsIcon>}
+          ></ListItem>
           <IconButton
             text={Locale.Login.Register}
             className={styles["login-register-btn"]}
