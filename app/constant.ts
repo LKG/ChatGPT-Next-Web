@@ -28,6 +28,7 @@ export enum FileName {
 export enum StoreKey {
   Chat = "chat-next-web-store",
   Access = "access-control",
+  Auth = "auth-control",
   Config = "app-config",
   Mask = "mask-store",
   Prompt = "prompt-store",

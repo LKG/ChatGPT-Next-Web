@@ -20,14 +20,12 @@ export const useAuthStore = create<AuthControlStore>()(
         set(() => ({ token }));
       },
       isAuthorized() {
-        get().fetch();
-
         // has token or has code or disabled access control
         return false;
       },
     }),
     {
-      name: StoreKey.Access,
+      name: StoreKey.Auth,
       version: 1,
     },
   ),
