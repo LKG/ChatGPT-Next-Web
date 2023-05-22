@@ -28,3 +28,13 @@ export interface registerModel {
    */
   refereeUser: string;
 }
+/**
+ *
+ * @param data 注册
+ * @returns
+ */
+export const register = async (data: registerModel) => {
+  // const loginUrl = `${apiUrl}/posts`;
+  // return axios.post(loginUrl);
+  return;
+};

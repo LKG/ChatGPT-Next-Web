@@ -17,3 +17,17 @@ export interface userModel {
    */
   rememberMe: string;
 }
+/**
+ *  登录
+ * @param data
+ * @returns
+ */
+export const login = async (data: userModel) => {
+  // const loginUrl = `${apiUrl}/posts`;
+  return;
+};
+
+/**
+ * 退出登录
+ */
+export const logout = async () => {};

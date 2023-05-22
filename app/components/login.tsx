@@ -14,6 +14,11 @@ import { LoginSns } from "./login-sns";
 export function Login() {
   const navigate = useNavigate();
   const config = useAppConfig();
+  const usernameRef = useRef();
+  const passwordRef = useRef();
+  const handleSubmit = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+  };
   const [loadingUsage, setLoadingUsage] = useState(false);
   useEffect(() => {
     // checks per minutes
@@ -129,6 +134,7 @@ export function Login() {
                 text={Locale.Login.Button}
                 className={styles["login-btn"]}
                 type="primary"
+                onClick={handleSubmit}
               />
               <IconButton
                 text={Locale.Login.Register}
