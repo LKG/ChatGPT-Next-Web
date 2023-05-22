@@ -1,3 +1,6 @@
+.window-content{
+  background-image: url(https://gwk-1251520987.cos.ap-shanghai.myqcloud.com/imgs/bg03.jpg);
+}
 .login {
   display: flex;
   align-items: center;
@@ -7,6 +10,7 @@
 }
 .login-box {
   margin: 0px 0px;
+  background-color: var(--white);
   border-top: 2px solid #eee;
   border-bottom: 1px solid #dedede;
   border-right: 1px solid #dedede;
