@@ -3,7 +3,7 @@ import * as React from "react";
 import styles from "./button.module.scss";
 
 export function IconButton(props: {
-  onClick?: () => void;
+  onClick?: (e: any) => void;
   icon?: JSX.Element;
   type?: "primary" | "danger";
   text?: string;

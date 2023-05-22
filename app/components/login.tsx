@@ -16,7 +16,7 @@ export function Login() {
   const config = useAppConfig();
   const usernameRef = useRef();
   const passwordRef = useRef();
-  const handleSubmit = (e: { preventDefault: () => void }) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
   };
   const [loadingUsage, setLoadingUsage] = useState(false);
