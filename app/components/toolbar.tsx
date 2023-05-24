@@ -11,8 +11,8 @@ export function Toolbar(props: { onClick?: (e: any) => void }) {
             <div className={styles["toolbar-logo"]}>
               <a>
                 <img
-                  title="CSDN首页"
-                  src="https://img-home.csdnimg.cn/images/20201124032511.png"
+                  title="公文库"
+                  src="https://gwk-1251520987.cos.ap-shanghai.myqcloud.com/imgs/logo.png"
                 />
               </a>
             </div>
