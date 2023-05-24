@@ -23,6 +23,7 @@ export function Toolbar(props: { onClick?: (e: any) => void }) {
                 <input
                   className={styles["toolbar-search-input"]}
                   type="text"
+                  readOnly
                   value=""
                 />
                 <div className={styles["gradient"]}> </div>
