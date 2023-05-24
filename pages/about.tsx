@@ -1,5 +1,5 @@
 import type { NextPageWithLayout } from "./_app";
-import styles from "./panel.module.scss";
+import styles from "./common.module.scss";
 const About: NextPageWithLayout = () => {
   return (
     <section>

@@ -1,25 +1,13 @@
 import type { NextPageWithLayout } from "./_app";
-import styles from "./panel.module.scss";
-export const metadata = {
-  title: "ChatGPT 公文库",
-  description: "Your personal ChatGPT Chat Bot.",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fafafa" },
-    { media: "(prefers-color-scheme: dark)", color: "#151515" },
-  ],
-  appleWebApp: {
-    title: "ChatGPT 公文库",
-    statusBarStyle: "default",
-  },
-};
-const Contact: NextPageWithLayout = () => {
+import styles from "./common.module.scss";
+import {Toolbar} from "../app/components/toolbar";
+import {Footer} from "../app/components/footer";
+const Protocol: NextPageWithLayout = () => {
   return (
-    <div className={styles["panel"] + " " + styles["panel-default"]}>
+    <>
+      <Toolbar/>
+      <section className={styles["container"]}>
+      <div className={styles["panel"] + " " + styles["panel-default"]}>
       <div className={styles["panel-heading"]}><h2>联系我们</h2></div>
       <div className={styles["panel-body"]}>
         <p>
@@ -36,15 +24,14 @@ const Contact: NextPageWithLayout = () => {
         </div>
       </div>
     </div>
+      </section>
+      <Footer/>
+    </>
   );
 };
 
-export default Contact;
+export default Protocol;
 
-Contact.getLayout = function getLayout(page: React.ReactElement) {
-  return (
-    <>
-     {page}
-    </>
-  );
+Protocol.getLayout = function getLayout(page: React.ReactElement) {
+  return <>{page}</>;
 };
