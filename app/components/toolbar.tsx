@@ -1,7 +1,7 @@
 import * as React from "react";
 import { FaUserCircle, FaSignOutAlt, FaShoppingBag } from "react-icons/fa";
 import styles from "./toolbar.module.scss";
-
+import BotIcon from "../icons/bot.svg";
 export function Toolbar(props: { onClick?: (e: any) => void }) {
   return (
     <div className={styles["toolbar"]}>
@@ -9,11 +9,8 @@ export function Toolbar(props: { onClick?: (e: any) => void }) {
         <div className={styles["toolbar-container"]}>
           <div className={styles["toolbar-container-left"]}>
             <div className={styles["toolbar-logo"]}>
-              <a>
-                <img
-                  title="公文库"
-                  src="https://gwk-1251520987.cos.ap-shanghai.myqcloud.com/imgs/logo.png"
-                />
+              <a href="/">
+                <BotIcon />
               </a>
             </div>
           </div>
