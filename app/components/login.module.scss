@@ -172,13 +172,12 @@
         left: -3px;
       }
       .login-validate-code-img{
-        height: 36px;
         position: relative;
         left: -3px;
       }
       .login-validate-code {
-        width: 120px;
-        border-radius: 10px 0px 0px 10px;
+        width: 115px;
+        border-radius: 0px 0px 0px 0px;
       }
       .login-change-code-btn {
         height: 36px;
@@ -191,13 +190,15 @@
   input[type="text"],
   input[type="password"] {
     max-width: 100%;
-    width: 206px;
+    width: 265px;
     height: 28px;
     line-height: 20px;
     margin-right: 3px;
+    text-align: start;
     padding: 3px;
     border: 1px solid #ccc;
     outline: none;
+    border-radius: 0px 10px 10px 0px;
     vertical-align: middle;
   }
 }

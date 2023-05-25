@@ -13,6 +13,13 @@
   }
   .dingtalk {
     display: flex;
+    margin-left: -5px;
+    margin-top: -5px;
+    svg{
+      height: 52px;
+      width: 52px;
+      color: blue;
+    }
   }
   ul {
     display: flex;
