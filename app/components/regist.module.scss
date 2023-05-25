@@ -105,7 +105,7 @@
         vertical-align: middle;
       }
       .phone-code {
-        width: 177px;
+        width: 170px;
         border-radius: 10px 0px 0px 10px;
       }
       .input-group-btn {
@@ -128,9 +128,10 @@
     max-width: 100%;
     width: 206px;
     height: 28px;
+    // min-height: 28px;
     line-height: 20px;
     margin-right: 3px;
-    text-align: start;
+    // text-align: start;
     padding: 3px;
     border: 1px solid #ccc;
     outline: none;

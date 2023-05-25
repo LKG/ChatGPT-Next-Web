@@ -177,11 +177,11 @@
       }
       .login-validate-code {
         width: 115px;
-        border-radius: 0px 0px 0px 0px;
+        border-radius: 10px 0px 0px 10px;
       }
       .login-change-code-btn {
-        height: 36px;
         position: relative;
+        height: 36px;
         border-radius: 0px 10px 10px 0px;
       }
     }
@@ -198,7 +198,7 @@
     padding: 3px;
     border: 1px solid #ccc;
     outline: none;
-    border-radius: 0px 10px 10px 0px;
+    // border-radius: 0px 10px 10px 0px;
     vertical-align: middle;
   }
 }

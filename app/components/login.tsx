@@ -133,7 +133,7 @@ export function Login() {
                   className={styles["register-safe"]}
                   target="_blank"
                   onClick={() => {
-                    navigate(Path.Regist);
+                    showToast(Locale.WIP);
                   }}
                 >
                   {Locale.Login.Register}
