@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useState, useEffect, HTMLProps, useRef, createRef } from "react";
 
 import styles from "./login.module.scss";
@@ -14,6 +15,10 @@ import { UserModel, login } from "../api/model/user";
 import { LoginSns } from "./login-sns";
 export function Login() {
   const navigate = useNavigate();
+  const [showCode, setShowCode] = useState(false);
+  const [codeUrl, seCodeUrl] = useState(
+    "https://www.gongwk.com/validate/passcode?_r_0.3136760189843122",
+  );
   const {
     register,
     handleSubmit,
@@ -68,33 +73,37 @@ export function Login() {
                   />
                 </div>
               </div>
-              <div className={styles["field"]}>
-                <label>{Locale.Login.ValidateCode}</label>
-                <div className={styles["input-group"]}>
-                  <input
-                    type="text"
-                    // name="validateCode"
-                    {...register("validateCode", { maxLength: 6 })}
-                    title={Locale.Login.ValidateCode}
-                    className={styles["login-validate-code"]}
-                    placeholder={Locale.Login.ValidateCode}
-                  />
-                  <img
-                    src="https://www.gongwk.com/validate/passcode?_r_0.3136760189843122"
-                    className={styles["login-validate-code-img"]}
-                  />
-                  <span className={styles["input-group-btn"]}>
-                    <IconButton
-                      text={Locale.Login.ChangeCode}
-                      className={styles["login-change-code-btn"]}
-                      type="primary"
-                      onClick={() => {
-                        showToast(Locale.WIP);
-                      }}
+              {showCode && (
+                <div className={styles["field"]}>
+                  <label>{Locale.Login.ValidateCode}</label>
+                  <div className={styles["input-group"]}>
+                    <input
+                      type="text"
+                      // name="validateCode"
+                      {...register("validateCode", { maxLength: 6 })}
+                      title={Locale.Login.ValidateCode}
+                      className={styles["login-validate-code"]}
+                      placeholder={Locale.Login.ValidateCode}
                     />
-                  </span>
+                    <img
+                      src={codeUrl}
+                      alt={Locale.Login.ValidateCode}
+                      className={styles["login-validate-code-img"]}
+                    />
+                    <span className={styles["input-group-btn"]}>
+                      <IconButton
+                        text={Locale.Login.ChangeCode}
+                        className={styles["login-change-code-btn"]}
+                        type="primary"
+                        onClick={() => {
+                          showToast(Locale.WIP);
+                        }}
+                      />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              )}
+
               <div className={styles["field"]}>
                 <label>{Locale.Login.PassWord}</label>
                 <a
@@ -183,6 +192,7 @@ export function Login() {
                 <div className={styles["qrcode-img"]}>
                   <img
                     title="二维码"
+                    alt=""
                     src="https://www.gongwk.com/validate/qrWxCode.json"
                   />
                 </div>
