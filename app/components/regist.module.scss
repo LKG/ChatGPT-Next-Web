@@ -17,7 +17,7 @@
   justify-content: center;
   flex-direction: column;
 }
-.login-box-switch {
+.regist-box-switch {
   height: 100%;
   z-index: 1;
   width: 100%;
@@ -94,7 +94,7 @@
       position: relative;
       display: table;
       border-collapse: separate;
-      .login-text,.login-phone-code {
+      .regist-text,.phone-code {
         width: 265px;
         height: 28px;
         line-height: 20px;
@@ -104,7 +104,7 @@
         outline: none;
         vertical-align: middle;
       }
-      .login-phone-code {
+      .phone-code {
         width: 177px;
         border-radius: 10px 0px 0px 10px;
       }
@@ -116,7 +116,7 @@
         display: table-cell;
         left: -3px
       }
-      .login-sms-btn {
+      .regist-sms-btn {
         height: 36px;
         border-radius: 0px 10px 10px 0px;
       }
@@ -130,6 +130,7 @@
     height: 28px;
     line-height: 20px;
     margin-right: 3px;
+    text-align: start;
     padding: 3px;
     border: 1px solid #ccc;
     outline: none;

@@ -43,7 +43,7 @@ export function Regist() {
     <ErrorBoundary>
       <div className={styles["regist"]}>
         <div className={styles["regist-box"]}>
-          <div className={styles["login-box-switch"]}>
+          <div className={styles["regist-box-switch"]}>
             <a
               href="javascript:;"
               className={styles["btn-2login"]}
@@ -63,7 +63,7 @@ export function Regist() {
                     type="text"
                     {...register("userPhone", { required: true })}
                     title={Locale.Register.UserPhone}
-                    className={styles["login-text"]}
+                    className={styles["regist-text"]}
                     placeholder={Locale.Register.UserPhone}
                   />
                 </div>
@@ -75,13 +75,13 @@ export function Regist() {
                     type="text"
                     {...register("phoneCode", { required: true })}
                     title={Locale.Register.PhoneCode}
-                    className={styles["login-phone-code"]}
+                    className={styles["phone-code"]}
                     placeholder={Locale.Register.PhoneCode}
                   />
                   <span className={styles["input-group-btn"]}>
                     <IconButton
                       text={Locale.Register.PhoneCodeBtn}
-                      className={styles["login-sms-btn"]}
+                      className={styles["regist-sms-btn"]}
                       type="primary"
                       onClick={() => {
                         showToast(Locale.WIP);
@@ -97,7 +97,7 @@ export function Regist() {
                     type="password"
                     {...register("passWord", { required: true })}
                     title={Locale.Register.PassWord}
-                    className={styles["login-text"]}
+                    className={styles["regist-text"]}
                     placeholder={Locale.Register.PassWord}
                   />
                 </div>
@@ -119,7 +119,7 @@ export function Regist() {
                       },
                     })}
                     title={Locale.Register.RetryPassWord}
-                    className={styles["login-text"]}
+                    className={styles["regist-text"]}
                     placeholder={Locale.Register.RetryPassWord}
                   />
                 </div>
