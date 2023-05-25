@@ -11,11 +11,16 @@ import Link from "next/link";
 import { Path } from "../constant";
 import { ErrorBoundary } from "./error";
 import { useNavigate } from "react-router-dom";
-
+import { useForm } from "react-hook-form";
 export function Regist() {
   const navigate = useNavigate();
   const config = useAppConfig();
-  const [loadingUsage, setLoadingUsage] = useState(false);
+  const {
+    register,
+    formState: { errors },
+    getValues,
+    handleSubmit,
+  } = useForm();
   useEffect(() => {
     // checks per minutes
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -56,11 +61,10 @@ export function Regist() {
                 <div className={styles["input-group"]}>
                   <input
                     type="text"
-                    name="userPhone"
+                    {...register("userPhone", { required: true })}
                     title={Locale.Register.UserPhone}
                     className={styles["login-text"]}
                     placeholder={Locale.Register.UserPhone}
-                    value=""
                   />
                 </div>
               </div>
@@ -69,11 +73,10 @@ export function Regist() {
                 <div className={styles["input-group"]}>
                   <input
                     type="text"
-                    name="userPhone"
-                    title={Locale.Register.UserPhone}
+                    {...register("phoneCode", { required: true })}
+                    title={Locale.Register.PhoneCode}
                     className={styles["login-phone-code"]}
                     placeholder={Locale.Register.PhoneCode}
-                    value=""
                   />
                   <span className={styles["input-group-btn"]}>
                     <IconButton
@@ -92,11 +95,10 @@ export function Regist() {
                 <div className={styles["input-group"]}>
                   <input
                     type="password"
-                    name="passWord"
+                    {...register("passWord", { required: true })}
                     title={Locale.Register.PassWord}
                     className={styles["login-text"]}
                     placeholder={Locale.Register.PassWord}
-                    value=""
                   />
                 </div>
               </div>
@@ -105,17 +107,29 @@ export function Regist() {
                 <div className={styles["input-group"]}>
                   <input
                     type="password"
-                    name="retryPassWord"
+                    {...register("retryPassWord", {
+                      required: true,
+                      validate: {
+                        matchesPreviousPassword: (value) => {
+                          const { password } = getValues();
+                          return (
+                            password === value || "Passwords should match!"
+                          );
+                        },
+                      },
+                    })}
                     title={Locale.Register.RetryPassWord}
                     className={styles["login-text"]}
                     placeholder={Locale.Register.RetryPassWord}
-                    value=""
                   />
                 </div>
               </div>
               <div className={styles["field"]}>
                 <label className={styles["remember-me"]}>
-                  <input name="rememberMe" type="checkbox" />
+                  <input
+                    {...register("rememberMe", { required: true })}
+                    type="checkbox"
+                  />
                   {Locale.Register.Agree}
                 </label>
                 <a className={styles["register-protocol"]}>

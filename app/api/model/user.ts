@@ -1,4 +1,4 @@
-export interface userModel {
+export interface UserModel {
   /**
    * 登录账号/邮箱/手机号
    */
@@ -22,8 +22,9 @@ export interface userModel {
  * @param data
  * @returns
  */
-export const login = async (data: userModel) => {
-  // const loginUrl = `${apiUrl}/posts`;
+export const login = async (data: UserModel) => {
+  const loginUrl = `https://www.gongwk.com/login.json`;
+  alert(JSON.stringify(data));
   return;
 };
 

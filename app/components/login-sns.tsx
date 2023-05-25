@@ -1,6 +1,7 @@
 import styles from "./login-sns.module.scss";
 import QqIcon from "../icons/qq.svg";
 import WeiboIcon from "../icons/weibo.svg";
+import { AiFillDingtalkCircle } from "react-icons/ai";
 import BaiduIcon from "../icons/baidu.svg";
 export function LoginSns(props: { onClick?: () => void }) {
   return (
@@ -17,9 +18,13 @@ export function LoginSns(props: { onClick?: () => void }) {
           </a>
         </li>
         <li className={styles["baidu"]}>
-          {" "}
           <a>
             <BaiduIcon />
+          </a>
+        </li>
+        <li className={styles["dingtalk"]}>
+          <a>
+            <AiFillDingtalkCircle />
           </a>
         </li>
       </ul>

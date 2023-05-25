@@ -1,23 +1,27 @@
-import { useState, useEffect, HTMLProps, useRef } from "react";
+import { useState, useEffect, HTMLProps, useRef, createRef } from "react";
 
 import styles from "./login.module.scss";
 import { Input, Modal, Popover, showToast, Select } from "./ui-lib";
 import { IconButton } from "./button";
 import { useAppConfig } from "../store";
-
+import { useForm } from "react-hook-form";
 import Locale from "../locales";
 import Link from "next/link";
 import { Path } from "../constant";
 import { ErrorBoundary } from "./error";
 import { useNavigate } from "react-router-dom";
+import { UserModel, login } from "../api/model/user";
 import { LoginSns } from "./login-sns";
 export function Login() {
   const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<UserModel>();
   const config = useAppConfig();
-  const usernameRef = useRef();
-  const passwordRef = useRef();
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
+  const onSubmit = (data: UserModel) => {
+    login(data);
   };
   useEffect(() => {
     // checks per minutes
@@ -51,17 +55,16 @@ export function Login() {
               {Locale.Login.QrScan}
             </a>
             <div className={styles["login-message"]}></div>
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className={styles["field"]}>
                 <label>{Locale.Login.UserName}</label>
                 <div className={styles["input-group"]}>
                   <input
                     type="text"
-                    name="userName"
+                    {...register("userName", { required: true })}
                     title={Locale.Login.UserNamePlaceholder}
                     className={styles["login-text"]}
                     placeholder={Locale.Login.UserNamePlaceholder}
-                    value=""
                   />
                 </div>
               </div>
@@ -70,11 +73,11 @@ export function Login() {
                 <div className={styles["input-group"]}>
                   <input
                     type="text"
-                    name="validateCode"
+                    // name="validateCode"
+                    {...register("validateCode", { maxLength: 6 })}
                     title={Locale.Login.ValidateCode}
                     className={styles["login-validate-code"]}
                     placeholder={Locale.Login.ValidateCode}
-                    value=""
                   />
                   <img
                     src="https://www.gongwk.com/validate/passcode?_r_0.3136760189843122"
@@ -97,7 +100,8 @@ export function Login() {
                 <a
                   className={styles["forget-pw-safe"]}
                   onClick={() => {
-                    navigate(Path.Regist);
+                    // navigate(Path.Regist);
+                    showToast(Locale.WIP);
                   }}
                   target="_blank"
                 >
@@ -106,17 +110,23 @@ export function Login() {
                 <div className={styles["input-group"]}>
                   <input
                     type="password"
-                    name="passWord"
+                    {...register("passWord", {
+                      required: true,
+                      maxLength: 12,
+                      minLength: {
+                        value: 6,
+                        message: "Min length is 6",
+                      },
+                    })}
                     title={Locale.Login.PassWord}
                     className={styles["login-text"]}
                     placeholder={Locale.Login.PassWord}
-                    value=""
                   />
                 </div>
               </div>
               <div className={styles["field"]}>
                 <label className={styles["remember-me"]}>
-                  <input name="rememberMe" type="checkbox" />
+                  <input {...register("rememberMe")} type="checkbox" />
                   {Locale.Login.RememberMe}
                 </label>
                 <a
@@ -133,14 +143,15 @@ export function Login() {
                 text={Locale.Login.Button}
                 className={styles["login-btn"]}
                 type="primary"
-                onClick={handleSubmit}
+                onClick={onSubmit}
               />
               <IconButton
                 text={Locale.Login.Register}
                 className={styles["login-register-btn"]}
                 type="primary"
                 onClick={() => {
-                  navigate(Path.Regist);
+                  // navigate(Path.Regist);
+                  showToast(Locale.WIP);
                 }}
               />
             </form>
