@@ -5,7 +5,7 @@ import { Input, Modal, Popover, showToast, Select } from "./ui-lib";
 import { IconButton } from "./button";
 import { useAppConfig } from "../store";
 
-import Locale, { AllLangs, changeLang, getLang } from "../locales";
+import Locale from "../locales";
 import Link from "next/link";
 import { Path } from "../constant";
 import { ErrorBoundary } from "./error";
@@ -19,7 +19,6 @@ export function Login() {
   const handleSubmit = (e: any) => {
     e.preventDefault();
   };
-  const [loadingUsage, setLoadingUsage] = useState(false);
   useEffect(() => {
     // checks per minutes
     // eslint-disable-next-line react-hooks/exhaustive-deps

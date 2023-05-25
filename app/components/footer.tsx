@@ -5,6 +5,7 @@ export function Footer(props: {
   link?: boolean;
   copyright?: boolean;
 }) {
+  const currentYear = new Date().getFullYear();
   return (
     <div className={styles["footer"]}>
       <div className={styles["container-fluid"]}>
@@ -42,7 +43,7 @@ export function Footer(props: {
         <div className={styles["wrapper"]}>
           <p className={styles["text-center"]}>
             <a href="https://www.gongwk.com/">公文库</a> 版权所有 Copyright ©
-            2009-2023
+            2009-{currentYear}
             <a
               href="http://www.beian.miit.gov.cn"
               target="_blank"
@@ -53,7 +54,6 @@ export function Footer(props: {
           </p>
           <p className={styles["text-center"]}>
             技术支持：<a href="https://www.gongwk.com/">杭州惊鸿一文科技</a>
-            2009-2023
           </p>
         </div>
       </div>

@@ -10,20 +10,21 @@ import {
   Popover,
   Select,
 } from "./ui-lib";
-import { ModelConfigList } from "./model-config";
-
+import {
+  FaUserCircle,
+  FaSignOutAlt,
+  FaShoppingBag,
+  FaCogs,
+} from "react-icons/fa";
 import { IconButton } from "./button";
 import { useChatStore, Theme, useAccessStore, useAppConfig } from "../store";
-
+import { Avatar, AvatarPicker } from "./emoji";
 import Locale, { AllLangs, changeLang, getLang } from "../locales";
 import { copyToClipboard } from "../utils";
 import Link from "next/link";
 import { Path } from "../constant";
-import { Prompt, SearchService, usePromptStore } from "../store/prompt";
 import { ErrorBoundary } from "./error";
 import { useNavigate } from "react-router-dom";
-import { Avatar, AvatarPicker } from "./emoji";
-import SettingsIcon from "../icons/settings.svg";
 export function My() {
   const navigate = useNavigate();
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
@@ -42,11 +43,6 @@ export function My() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [],
   );
-
-  const promptStore = usePromptStore();
-  const builtinCount = SearchService.count.builtin;
-  const customCount = promptStore.getUserPrompts().length ?? 0;
-  const [shouldShowPromptModal, setShowPromptModal] = useState(false);
 
   useEffect(() => {
     // checks per minutes
@@ -70,7 +66,7 @@ export function My() {
     <ErrorBoundary>
       <div className={styles["my"]}>
         <List>
-          <ListItem title={Locale.Settings.Avatar} icon={SettingsIcon}>
+          <ListItem title={Locale.Settings.Avatar} icon={<FaUserCircle />}>
             <Popover
               onClose={() => setShowEmojiPicker(false)}
               content={
@@ -96,27 +92,12 @@ export function My() {
           <ListItem
             title={Locale.Settings.Title}
             className={styles["my-list-item"]}
-            icon={<SettingsIcon></SettingsIcon>}
+            icon={<FaShoppingBag />}
           ></ListItem>
           <ListItem
             title={Locale.Settings.Title}
             className={styles["my-list-item"]}
-            icon={<SettingsIcon></SettingsIcon>}
-          ></ListItem>
-          <ListItem
-            title={Locale.Settings.Title}
-            className={styles["my-list-item"]}
-            icon={<SettingsIcon></SettingsIcon>}
-          ></ListItem>
-          <ListItem
-            title={Locale.Settings.Title}
-            className={styles["my-list-item"]}
-            icon={<SettingsIcon></SettingsIcon>}
-          ></ListItem>
-          <ListItem
-            title={Locale.Settings.Title}
-            className={styles["my-list-item"]}
-            icon={<SettingsIcon></SettingsIcon>}
+            icon={<FaCogs />}
           ></ListItem>
           <IconButton
             text={Locale.Login.Register}
